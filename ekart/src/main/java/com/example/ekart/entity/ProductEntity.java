@@ -1,18 +1,43 @@
-package com.example.entity;
+package com.example.ekart.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="PRODUCT")
 public class ProductEntity {
-	private String productId;
+	@Id
+	@Column(name="PRODUCT_ID")
+	private Integer productId;
+	
+	@Column(name="NAME")
 	private String name;
+	
+	@Column(name="DESCRIPTION")
 	private String description;
+	
+	@Column(name="CATEGORY")
 	private String category;
+	
+	@Column(name="BRAND")
 	private String brand;
+	
+	@Column(name="PRICE")
 	private double price;
+	
+	@Column(name="DISCOUNT")
 	private double discount;
+	
+	@Column(name="QUANTITY")
 	private int quantity;
-	public String getProductId() {
+	
+	
+	public Integer getProductId() {
 		return productId;
 	}
-	public void setProductId(String productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 	public String getName() {
@@ -57,18 +82,7 @@ public class ProductEntity {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public ProductEntity(String productId, String name, String description, String category, String brand, double price,
-			double discount, int quantity) {
-		super();
-		this.productId = productId;
-		this.name = name;
-		this.description = description;
-		this.category = category;
-		this.brand = brand;
-		this.price = price;
-		this.discount = discount;
-		this.quantity = quantity;
-	}
+	
 	
 
 }

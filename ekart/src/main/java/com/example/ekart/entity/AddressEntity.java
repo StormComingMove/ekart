@@ -1,18 +1,38 @@
-package com.example.entity;
+package com.example.ekart.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ADDRESS")
 public class AddressEntity {
-	private String addressId;
+	
+	@Id
+	@Column(name="ADDRESS_ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer addressId;
+	
+	@Column(name="ADDRESS_LINE_1")
 	private String addressLine1;
+	
+	@Column(name="ADDRESS_LINE_2")
 	private String addressLine2;
+	
+	@Column(name="CITY")
 	private String city;
+	
+	@Column(name="STATE")
 	private String state;
-	private int pincode;
-	public String getAddressId() {
-		return addressId;
-	}
-	public void setAddressId(String addressId) {
-		this.addressId = addressId;
-	}
+	
+	@Column(name="PINCODE")
+	private Integer pincode;
+	
+	
+	
 	public String getAddressLine1() {
 		return addressLine1;
 	}
@@ -43,16 +63,7 @@ public class AddressEntity {
 	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
-	public AddressEntity(String addressId, String addressLine1, String addressLine2, String city, String state,
-			int pincode) {
-		super();
-		this.addressId = addressId;
-		this.addressLine1 = addressLine1;
-		this.addressLine2 = addressLine2;
-		this.city = city;
-		this.state = state;
-		this.pincode = pincode;
-	}
+	
 	
 	
 
